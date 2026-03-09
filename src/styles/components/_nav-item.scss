@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.nav-item{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  border-radius: $border-radius;
+  color: $text;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  margin: 1rem 2rem; // zatim dokud nebude sidebar brasko
+  transition: background-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    background-color: $foreground;
+  }
+
+  &.active{
+    background-color: $foreground;
+  }
+}

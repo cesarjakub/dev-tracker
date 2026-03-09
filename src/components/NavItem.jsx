@@ -10,7 +10,7 @@ export default function NavItem({path, label, icon}) {
 
     return (
         <a href={path} onClick={handleOnClick} className={`nav-item ${isActive ? "active" : ""}`}>
-            {icon && <img src={icon} alt={label} className="nav-icon" />}
+            <img src={icon} alt={label} className="nav-icon" />
             <span>{label}</span>
         </a>
     );
