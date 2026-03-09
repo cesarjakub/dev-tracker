@@ -1,4 +1,4 @@
-export default function ToDo() {
+export default function Todo() {
     return (
         <h1>To Do</h1>
     )
