@@ -1,0 +1,7 @@
+@use "../abstracts/variables" as *;
+
+body {
+  background: $bg;
+  color: $text;
+  font-family: system-ui, sans-serif;
+}

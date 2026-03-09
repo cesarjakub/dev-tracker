@@ -1,1 +1,4 @@
-@use "components/sidebar" as *;
+@use "./abstracts/reset";
+@use "./base/globals";
+
+@use "./components/sidebar";

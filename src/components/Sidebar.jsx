@@ -18,6 +18,7 @@ export default function Sidebar() {
                         {route.label}
                     </a>
                 ))}
+
             </nav>
         </aside>
     );
