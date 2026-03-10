@@ -1,11 +1,12 @@
+import LOGO from "../assets/icons/logo.svg";
 import {routes} from "../router/routes.js";
 import NavItem from "./NavItem.jsx";
 
 export default function Sidebar() {
     return (
         <aside className="sidebar">
-            <div className="sidebar-logo">
-                <h1>LOGO</h1>
+            <div className="sidebar-header">
+                <img src={LOGO} className="sidebar-logo" alt="DevTracker" />
             </div>
 
             <nav>

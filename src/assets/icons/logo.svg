@@ -1,0 +1,20 @@
+<svg width="250" height="50" viewBox="0 0 250 50" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .jbm-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 24px;
+        fill: #000000;
+        }
+        .accent { fill: #00B4D8; }
+    </style>
+
+    <g transform="translate(10, 10)">
+        <rect x="0" y="18" width="5" height="12" rx="1" fill="#000000" />
+        <rect x="8" y="10" width="5" height="20" rx="1" fill="#000000" />
+        <rect x="16" y="0" width="5" height="30" rx="1" class="accent" />
+    </g>
+
+    <text x="40" y="35" class="jbm-text">
+        Dev<tspan class="accent">Tracker</tspan>
+    </text>
+</svg>
