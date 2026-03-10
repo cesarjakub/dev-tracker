@@ -16,7 +16,7 @@
   transition: background-color 0.2s, box-shadow 0.2s;
 
   &:hover {
-    background-color: $foreground;
+    background-color: $hover;
   }
 
   &.active{
