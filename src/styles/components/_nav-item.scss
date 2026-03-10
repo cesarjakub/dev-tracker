@@ -1,25 +1,44 @@
 @use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
 
-.nav-item{
+.nav-item {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  cursor: pointer;
-  background-color: transparent;
-  text-decoration: none;
-  border-radius: $border-radius;
-  color: $text;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem;
-  margin: 1rem 1rem;
-  transition: background-color 0.2s, box-shadow 0.2s;
 
-  &:hover {
-    background-color: $hover;
+  cursor: pointer;
+  text-decoration: none;
+
+  border-radius: $radius-md;
+  color: $nav-text;
+
+  gap: $space-sm;
+  padding: $space-sm $space-md;
+  margin: $space-md;
+
+  border: 2px solid transparent;
+  transition: background-color $transition-speed, color $transition-speed;
+
+  .nav-icon {
+    width: $icon-size;
+    height: $icon-size;
+
+    flex-shrink: 0;
+    opacity: 0.5;
+
+    transition: opacity $transition-speed;
   }
 
-  &.active{
-    background-color: $foreground;
+  &:hover {
+    background-color: $nav-hover-bg;
+  }
+
+  &.active {
+    background-color: $nav-active-bg;
+    color: $nav-text-active;
+    border: 2px solid $nav-active-border;
+
+    .nav-icon {
+      opacity: 1;
+    }
   }
 }

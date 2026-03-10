@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 
 body {
-  background: $background;
-  color: $text;
+  background: $color-bg;
+  color: $text-primary;
   font-family: "JetBrains Mono", monospace;
 }

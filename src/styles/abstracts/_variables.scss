@@ -1,7 +1,32 @@
 // colors
-$background: #F1F1F1;
-$foreground: #FFFFFF;
-$hover: #E5E5E5;
-$text: #000000;
+$color-bg: #f1f1f1;
+$color-surface: #ffffff;
 
-$border-radius: 1rem;
+$text-primary: #111827;
+$text-secondary: #6b7280;
+
+// button
+
+// nav item
+$nav-hover-bg: #d8d8d8;
+$nav-active-bg: #d8d8d8;
+$nav-active-border: #c8c8c8;
+$nav-text: $text-secondary;
+$nav-text-active: $text-primary;
+
+// spacing
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+
+// border radius
+$radius-xs: 0.25rem;
+$radius-sm: 0.5rem;
+$radius-md: 1rem;
+
+// sizing
+$icon-size: 1.25rem;
+$sidebar-width: 19rem;
+
+// transitions
+$transition-speed: 0.2s;
