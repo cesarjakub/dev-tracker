@@ -1,4 +1,6 @@
 @use "./abstracts/reset";
 @use "./base/globals";
 
+@use "./layouts/layout";
 @use "./components/nav-item";
+@use "./components/sidebar";
