@@ -1,6 +1,6 @@
 import router from "../router/index.js";
 
-export default function NavItem({path, label, icon}) {
+const NavItem = ({path, label, icon}) => {
     const isActive = router.isActive(path);
 
     function handleOnClick(e) {
@@ -15,3 +15,5 @@ export default function NavItem({path, label, icon}) {
         </a>
     );
 }
+
+export default NavItem;

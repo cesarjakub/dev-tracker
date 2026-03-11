@@ -1,8 +1,14 @@
 import {ICONS} from "../constants/icons.js";
 import {routes} from "../router/routes.js";
 import NavItem from "./NavItem.jsx";
+import Button from "./Button.jsx";
 
-export default function Sidebar() {
+const Sidebar = () => {
+
+    function handleOnClick() {
+        alert("crazy clicked");
+    }
+
     return (
         <aside className="sidebar">
             <div className="sidebar-header">
@@ -21,8 +27,12 @@ export default function Sidebar() {
             </nav>
 
             <div className="sidebar-footer">
-                <button className="collapse-btn">Collapse</button>
+                <Button onClick={handleOnClick} className="collapse-btn">
+                    Collapse
+                </Button>
             </div>
         </aside>
     );
 }
+
+export default Sidebar;
