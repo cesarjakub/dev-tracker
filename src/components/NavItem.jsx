@@ -1,6 +1,6 @@
 import router from "../router/index.js";
 
-const NavItem = ({path, label, icon}) => {
+const NavItem = ({path, label, icon, collapsed}) => {
     const isActive = router.isActive(path);
 
     function handleOnClick(e) {
@@ -11,7 +11,7 @@ const NavItem = ({path, label, icon}) => {
     return (
         <a href={path} onClick={handleOnClick} className={`nav-item ${isActive ? "active" : ""}`}>
             <img src={icon} alt={label} className="nav-icon" />
-            <span>{label}</span>
+            {!collapsed && <span>{label}</span>}
         </a>
     );
 }
