@@ -1,0 +1,38 @@
+@use "../abstracts/variables" as *;
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: $space-sm;
+
+  padding: $space-sm $space-md;
+
+  border-radius: $radius-md;
+  border: none;
+
+  font: inherit;
+  cursor: pointer;
+
+  .btn-icon{
+    width: $icon-size;
+    height: $icon-size;
+  }
+}
+
+.collapse-btn {
+  width: 100%;
+
+  justify-content: flex-start;
+
+  color: $nav-text-active;
+  background: transparent;
+
+  border: 2px solid transparent;
+  transition: background-color $transition-speed, color $transition-speed;
+
+  &:hover {
+    background-color: $nav-hover-bg;
+  }
+}

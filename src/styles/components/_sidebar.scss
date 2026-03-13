@@ -15,10 +15,10 @@
 
   .sidebar-footer {
     margin-top: auto;
+    padding: $space-md;
 
     .sidebar-footer-line{
       height: 1px;
-      width: 100%;
       background-color: $text-secondary;
       opacity: 0.5;
       margin: $space-md;

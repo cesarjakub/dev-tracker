@@ -5,10 +5,10 @@ import Button from "./Button.jsx";
 import {useState} from "react";
 
 const Sidebar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isCollapse, setisCollapse] = useState(false);
 
     return (
-        <aside className={`sidebar ${isOpen ? "collapsed" : ""}`}>
+        <aside className={`sidebar ${isCollapse ? "sidebar-collapsed" : ""}`}>
             <div className="sidebar-header">
                 <img src={ICONS.LOGO} className="sidebar-logo" alt="DevTracker" />
             </div>
@@ -20,15 +20,15 @@ const Sidebar = () => {
                         path={route.path}
                         label={route.label}
                         icon={route.icon}
-                        collapsed={isOpen}
+                        isCollapse={isCollapse}
                     />
                 ))}
             </nav>
 
             <div className="sidebar-footer">
                 <div className="sidebar-footer-line"></div>
-                <Button onClick={() => setIsOpen(prev => !prev)} className="btn collapse-btn">
-                    Collapse
+                <Button icon={ICONS.SIDEBAR} onClick={() => setisCollapse(prev => !prev)} className="collapse-btn">
+                    {!isCollapse && "Collapse"}
                 </Button>
             </div>
         </aside>
