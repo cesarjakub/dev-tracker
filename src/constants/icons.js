@@ -7,7 +7,8 @@ import LightModeIcon from '../assets/icons/Light Mode.svg';
 import SidebarIcon from '../assets/icons/Sidebar.svg';
 import TodoIcon from '../assets/icons/ToDo.svg';
 import TrashIcon from '../assets/icons/Trash.svg';
-import LogoIcon from '../assets/icons/logo.svg';
+import LogoIcon from '../assets/icons/Logo.svg';
+import SmallLogoIcon from '../assets/icons/Small Logo.svg';
 
 export const ICONS = {
     ANALYTICS: AnalyticsIcon,
@@ -20,4 +21,5 @@ export const ICONS = {
     TODO: TodoIcon,
     TRASH: TrashIcon,
     LOGO: LogoIcon,
+    SMALL_LOGO: SmallLogoIcon,
 };

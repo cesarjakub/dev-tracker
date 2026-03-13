@@ -9,8 +9,9 @@ const Sidebar = () => {
 
     return (
         <aside className={`sidebar ${isCollapse ? "sidebar-collapsed" : ""}`}>
+
             <div className="sidebar-header">
-                <img src={ICONS.LOGO} className="sidebar-logo" alt="DevTracker" />
+                    <img src={isCollapse ? ICONS.SMALL_LOGO : ICONS.LOGO} className="sidebar-logo" alt="DevTracker" />
             </div>
 
             <nav>
