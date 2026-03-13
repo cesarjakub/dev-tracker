@@ -9,11 +9,12 @@
 
   padding: $space-sm $space-md;
 
-  border-radius: $radius-md;
+  border-radius: $radius-sm;
   border: none;
 
   font: inherit;
   cursor: pointer;
+  color: $color-surface;
 
   .btn-icon{
     width: $icon-size;
@@ -34,5 +35,33 @@
 
   &:hover {
     background-color: $nav-hover-bg;
+  }
+}
+
+.btn-primary{
+  background-color: $btn-primary;
+  &:hover{
+    background-color: $btn-primary-hover;
+  }
+}
+
+.btn-secondary{
+  background-color: $btn-secondary;
+  &:hover{
+    background-color: $btn-secondary-hover;
+  }
+}
+
+.btn-success{
+  background-color: $btn-success;
+  &:hover{
+    background-color: $btn-success-hover;
+  }
+}
+
+.btn-danger{
+  background-color: $btn-danger;
+  &:hover{
+    background-color: $btn-danger-hover;
   }
 }
