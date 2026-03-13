@@ -27,7 +27,7 @@ const Sidebar = () => {
 
             <div className="sidebar-footer">
                 <div className="sidebar-footer-line"></div>
-                <Button onClick={() => setIsOpen(prev => !prev)} className="collapse-btn">
+                <Button onClick={() => setIsOpen(prev => !prev)} className="btn collapse-btn">
                     Collapse
                 </Button>
             </div>

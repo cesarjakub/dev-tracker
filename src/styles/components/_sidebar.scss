@@ -15,5 +15,13 @@
 
   .sidebar-footer {
     margin-top: auto;
+
+    .sidebar-footer-line{
+      height: 1px;
+      width: 100%;
+      background-color: $text-secondary;
+      opacity: 0.5;
+      margin: $space-md;
+    }
   }
 }
