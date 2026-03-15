@@ -1,0 +1,39 @@
+@use "../abstracts/variables" as *;
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+  margin: $space-md $space-xl;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+
+    input,
+    select {
+      padding: $space-sm $space-md;
+      border: 1px solid $color-surface;
+      border-radius: $radius-sm;
+      font: inherit;
+
+      &:focus {
+        outline: none;
+        border-color: $btn-primary;
+      }
+    }
+  }
+
+  .task-select-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: $space-md;
+
+    .form-group {
+      flex: 1 1 150px;
+      min-width: $modal-min-width;
+    }
+  }
+}
