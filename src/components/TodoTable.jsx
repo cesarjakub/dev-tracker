@@ -25,6 +25,7 @@ const TodoTable = () => {
                         <th>TASK-ID</th>
                         <th>TASK</th>
                         <th>STATUS</th>
+                        <th>PRIORITY</th>
                         <th>DELETE</th>
                     </tr>
                 </thead>

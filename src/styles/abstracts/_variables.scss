@@ -26,6 +26,19 @@ $nav-active-border: #c8c8c8;
 $nav-text: $text-secondary;
 $nav-text-active: $text-primary;
 
+// tasks
+$color-status-todo: #EF476F26;
+$color-status-todo-text: #EF476F;
+$color-status-done: #2EC4B626;
+$color-status-done-text: #2EC4B6;
+
+$color-priority-low-text: #2EC4B6;
+$color-priority-low: #2EC4B626;
+$color-priority-medium-text: #F59E0B;
+$color-priority-medium: #F59E0B26;
+$color-priority-high-text: #EF476F;
+$color-priority-high: #EF476F26;
+
 // spacing
 $space-xs: 0.25rem;
 $space-sm: 0.5rem;
@@ -45,6 +58,7 @@ $icon-size: 1.25rem;
 $sidebar-width: 20rem;
 $sidebar-width-collapse: 5.5rem;
 $table-width: 40rem;
+$modal-width: 40rem;
 
 // font
 $font-size-xs: 0.25rem;

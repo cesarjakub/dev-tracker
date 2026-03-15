@@ -1,0 +1,41 @@
+@use '../abstracts/variables' as *;
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba($color-black, 0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+
+  .modal {
+    background: $color-bg;
+    border-radius: $radius-md;
+
+    width: $modal-width;
+    max-width: 90%;
+
+    padding: $space-lg;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin: $space-md $space-xl;
+    }
+
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      gap: $space-md;
+    }
+  }
+
+}

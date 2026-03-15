@@ -27,6 +27,11 @@ const TodoRow = ({ task, onDelete, onToggleDone }) => {
                     {task.status}
                 </span>
             </td>
+            <td className="todo-status">
+                <span className={`priority-badge priority-${task.priority.toLowerCase()}`}>
+                    {task.priority}
+                </span>
+            </td>
             <td className="todo-delete">
                 <Button icon={ICONS.TRASH} iconAlt="delete" onClick={() => onDelete(task.id)} className="btn-danger"></Button>
             </td>

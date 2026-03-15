@@ -9,7 +9,8 @@ import TodoIcon from '../assets/icons/ToDo.svg';
 import TrashIcon from '../assets/icons/Trash.svg';
 import LogoIcon from '../assets/icons/Logo.svg';
 import SmallLogoIcon from '../assets/icons/Small Logo.svg';
-import add from '../assets/icons/Add plus.svg';
+import Add from '../assets/icons/Add plus.svg';
+import Close from '../assets/icons/Close.svg';
 
 export const ICONS = {
     ANALYTICS: AnalyticsIcon,
@@ -23,5 +24,6 @@ export const ICONS = {
     TRASH: TrashIcon,
     LOGO: LogoIcon,
     SMALL_LOGO: SmallLogoIcon,
-    ADD: add,
+    ADD: Add,
+    CLOSE: Close,
 };
