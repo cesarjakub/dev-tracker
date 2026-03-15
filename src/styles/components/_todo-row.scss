@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as *;
+
+.todo-row {
+  border-bottom: solid 1px rgba($text-secondary, 0.5);
+
+  td {
+    padding: $space-md;
+    vertical-align: middle;
+  }
+
+  .todo-checkbox {
+    input {
+      width: $space-md;
+      height: $space-md;
+
+      background: $color-surface;
+
+      cursor: pointer;
+
+      &:checked {
+        accent-color: $color-black;
+      }
+    }
+  }
+
+  .status-badge {
+    padding: $space-xs $space-sm;
+    border-radius: $radius-lg;
+    font-size: $font-size-md;
+  }
+
+  .status-done {
+    background: rgba($btn-secondary, 0.15);
+    color: $btn-success-hover;
+    border: 1px solid $btn-success-hover;
+  }
+
+  .status-to-do {
+    background: rgba($btn-danger, 0.15);
+    color: $btn-danger-hover;
+    border: 1px solid $btn-danger-hover;
+  }
+}
+
