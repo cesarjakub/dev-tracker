@@ -1,7 +1,10 @@
 @use "./abstracts/reset";
 @use "./base/globals";
 
+@use "./pages/projects";
+
 @use "./layouts/layout";
 @use "./components/nav-item";
 @use "./components/sidebar";
 @use "./components/button";
+@use "./components/page-header";
