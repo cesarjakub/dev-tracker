@@ -3,15 +3,16 @@
 .page-header {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   border-bottom: solid 1px rgba($text-secondary, 0.5);
 
   h1{
-    margin: $space-md;
+    margin: $space-md $space-xl;
   }
 
   button{
-    margin: $space-md;
+    margin: $space-md $space-xl;
   }
 }
