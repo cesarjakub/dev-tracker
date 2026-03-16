@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+
+.badge{
+  padding: $space-xs $space-sm;
+  border-radius: $radius-lg;
+  font-size: $font-size-md;
+}
+
+.badge-default{
+  color: $text-secondary;
+  background-color: $color-bg;
+  border: 1px solid $text-secondary;
+}
+
+.badge-success{
+  color: $badge-success-text;
+  background-color: $badge-success-bg;
+  border: 1px solid $badge-success-border;
+}
+
+.badge-warning{
+  color: $badge-warning-text;
+  background-color: $badge-warning-bg;
+  border: 1px solid $badge-warning-border;
+}
+
+.badge-danger{
+  color: $badge-danger-text;
+  background-color: $badge-danger-bg;
+  border: 1px solid $badge-danger-border;
+}

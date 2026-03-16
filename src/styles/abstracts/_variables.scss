@@ -6,18 +6,25 @@ $color-black: #000000;
 $text-primary: #111827;
 $text-secondary: #6b7280;
 
+$color-primary: #00B4D8;
+$color-secondary: #90E0EF;
+
+$color-success: #2EC4B6;
+$color-warning: #F59E0B;
+$color-danger: #EF476F;
+
 // button
-$btn-primary: #00B4D8;
+$btn-primary: $color-primary;
 $btn-primary-hover: #0096C7;
 
-$btn-secondary: #90E0EF;
+$btn-secondary: $color-secondary;
 $btn-secondary-hover: #72D6E6;
 
-$btn-danger: #EF476F;
-$btn-danger-hover: #D93A60;
-
-$btn-success: #2EC4B6;
+$btn-success: $color-success;
 $btn-success-hover: #25A99D;
+
+$btn-danger: $color-danger;
+$btn-danger-hover: #D93A60;
 
 // nav item
 $nav-hover-bg: #d8d8d8;
@@ -27,17 +34,17 @@ $nav-text: $text-secondary;
 $nav-text-active: $text-primary;
 
 // tasks
-$color-status-todo: #EF476F26;
-$color-status-todo-text: #EF476F;
-$color-status-done: #2EC4B626;
-$color-status-done-text: #2EC4B6;
+$badge-success-bg: #2EC4B626;
+$badge-success-text: $color-success;
+$badge-success-border: $color-success;
 
-$color-priority-low-text: #2EC4B6;
-$color-priority-low: #2EC4B626;
-$color-priority-medium-text: #F59E0B;
-$color-priority-medium: #F59E0B26;
-$color-priority-high-text: #EF476F;
-$color-priority-high: #EF476F26;
+$badge-warning-bg: #F59E0B26;
+$badge-warning-text: $color-warning;
+$badge-warning-border: $color-warning;
+
+$badge-danger-bg: #EF476F26;
+$badge-danger-text: $color-danger;
+$badge-danger-border: $color-danger;
 
 // spacing
 $space-xs: 0.25rem;

@@ -22,42 +22,5 @@
       }
     }
   }
-
-  .status-badge {
-    padding: $space-xs $space-sm;
-    border-radius: $radius-lg;
-    font-size: $font-size-md;
-  }
-
-  .status-done {
-    background: rgba($color-status-done, 0.15);
-    color: $color-status-done-text;
-  }
-
-  .status-to-do {
-    background: rgba($color-status-todo, 0.15);
-    color: $color-status-todo-text;
-  }
-
-  .priority-badge {
-    padding: $space-xs $space-sm;
-    border-radius: $radius-lg;
-    font-size: $font-size-md;
-  }
-
-  .priority-low {
-    background: $color-priority-low;
-    color: $color-priority-low-text;
-  }
-
-  .priority-medium {
-    background: $color-priority-medium;
-    color: $color-priority-medium-text;
-  }
-
-  .priority-high {
-    background: $color-priority-high;
-    color: $color-priority-high-text;
-  }
 }
 

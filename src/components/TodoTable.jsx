@@ -12,7 +12,7 @@ const TodoTable = () => {
 
     const handleToggleDone = (id, done) => {
         setTasks(tasks.map(task =>
-            task.id === id ? { ...task, status: done ? "Done" : "To-Do" } : task
+            task.id === id ? { ...task, status: done ? "Done" : "Todo" } : task
         ));
     };
 
