@@ -61,8 +61,10 @@
 }
 
 .btn-danger{
-  background-color: $btn-danger;
-  &:hover{
+  color: $btn-danger;
+  background: rgba($btn-danger, 0.12);
+
+  &:hover {
     background-color: $btn-danger-hover;
   }
 }
