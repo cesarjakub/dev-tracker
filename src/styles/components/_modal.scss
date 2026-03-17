@@ -4,6 +4,7 @@
   position: fixed;
   inset: 0;
 
+  backdrop-filter: blur(5px);
   background: rgba($color-black, 0.4);
 
   display: flex;
@@ -37,5 +38,4 @@
       gap: $space-md;
     }
   }
-
 }

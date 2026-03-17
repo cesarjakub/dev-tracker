@@ -13,6 +13,7 @@ const Modal = ({ title, children, onClose }) => {
                         icon={ICONS.CLOSE}
                         onClick={onClose}
                         className="btn-primary"
+
                     />
                 </div>
 
