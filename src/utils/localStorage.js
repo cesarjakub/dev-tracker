@@ -3,12 +3,12 @@ class LocalStorage{
 
     setObject(key, object){
         const data= JSON.stringify(object);
-        localStorage.setItem(key, data);
+        window.localStorage.setItem(key, data);
     }
 
     getObject(key){
-        const object = localStorage.getItem(key);
-        return JSON.parse(object);
+        const object = window.localStorage.getItem(key);
+        return object ? JSON.parse(object) : [];
     }
 
     remove(key){
@@ -16,4 +16,4 @@ class LocalStorage{
     }
 }
 
-export default LocalStorage;
+export default new LocalStorage();

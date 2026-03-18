@@ -1,21 +1,6 @@
-import {mockTasks} from "../data/mockTasks.js";
-import {useState} from "react";
 import TodoRow from "./TodoRow.jsx";
 
-const TodoTable = () => {
-
-    const [tasks, setTasks] = useState(mockTasks);
-
-    const handleDelete = (id) => {
-        setTasks(tasks.filter(task => task.id !== id));
-    };
-
-    const handleToggleDone = (id, done) => {
-        setTasks(tasks.map(task =>
-            task.id === id ? { ...task, status: done ? "Done" : "Todo" } : task
-        ));
-    };
-
+const TodoTable = ({ tasks, onDelete, onToggleDone }) => {
     return (
         <div className="table-wrapper">
             <table className="table">
@@ -35,8 +20,8 @@ const TodoTable = () => {
                     <TodoRow
                         key={task.id}
                         task={task}
-                        onDelete={handleDelete}
-                        onToggleDone={handleToggleDone}
+                        onDelete={onDelete}
+                        onToggleDone={onToggleDone}
                     />
                 ))}
                 </tbody>

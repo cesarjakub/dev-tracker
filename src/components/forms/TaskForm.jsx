@@ -21,7 +21,7 @@ const TaskForm = ({ onSubmit }) => {
                 <div className="form-group">
                     <label>Status</label>
                     <select name="status" required>
-                        <option value="To-Do">To-Do</option>
+                        <option value="Todo">Todo</option>
                         <option value="Done">Done</option>
                     </select>
                 </div>
