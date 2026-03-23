@@ -4,11 +4,14 @@ import {useState} from "react";
 import Modal from "../components/Modal.jsx";
 import {ICONS} from "../constants/icons.js";
 import ProjectForm from "../components/forms/ProjectForm.jsx";
+import {useProject} from "../hooks/useProject.js";
 
 const Projects = () => {
     const [addModalOpen, setAddModalOpen] = useState(false);
+    const { projects, addProject, deleteProject } = useProject();
 
     const handleSubmit = (data) => {
+        addProject(data);
         setAddModalOpen(false);
     };
 
@@ -24,6 +27,12 @@ const Projects = () => {
                     <ProjectForm onSubmit={handleSubmit} />
                 </Modal>
             )}
+
+            {projects.map((project) => (
+                <div key={project.id}>
+                    <h1>{project.title}</h1>
+                </div>
+            ))}
 
         </div>
     )
