@@ -14,8 +14,8 @@ export const useProject = () => {
             id: maxId + 1,
             title: data.title,
             date: new Date(),
-            description: data.description || "",
-            wiki: data.wiki || "",
+            description: data.description,
+            wiki: data.wiki,
         };
         setProjects([...projects, newProject]);
     }

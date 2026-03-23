@@ -5,6 +5,7 @@ import Modal from "../components/Modal.jsx";
 import {ICONS} from "../constants/icons.js";
 import ProjectForm from "../components/forms/ProjectForm.jsx";
 import {useProject} from "../hooks/useProject.js";
+import ProjectCard from "../components/ProjectCard.jsx";
 
 const Projects = () => {
     const [addModalOpen, setAddModalOpen] = useState(false);
@@ -29,9 +30,7 @@ const Projects = () => {
             )}
 
             {projects.map((project) => (
-                <div key={project.id}>
-                    <h1>{project.title}</h1>
-                </div>
+                <ProjectCard key={project.id} project={project} onDelete={deleteProject} />
             ))}
 
         </div>
