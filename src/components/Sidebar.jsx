@@ -1,5 +1,5 @@
 import {ICONS} from "../constants/icons.js";
-import {routes} from "../router/routes.js";
+import {navRoutes} from "../router/routes.js";
 import NavItem from "./NavItem.jsx";
 import Button from "./Button.jsx";
 import {useState} from "react";
@@ -15,7 +15,7 @@ const Sidebar = () => {
             </div>
 
             <nav>
-                {routes.map((route) => (
+                {navRoutes.map((route) => (
                     <NavItem
                         key={route.path}
                         path={route.path}

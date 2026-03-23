@@ -5,18 +5,45 @@ class Router {
         this.listeners = [];
     }
 
+    matchRoute(path) {
+        for (const route of this.routes) {
+            const paramNames = [];
+
+            const regexPath = route.path.replace(/:([^/]+)/g, (_, key) => {
+                paramNames.push(key);
+                return "([^/]+)";
+            });
+
+            const match = path.match(new RegExp(`^${regexPath}$`));
+
+            if (match) {
+                const params = {};
+                paramNames.forEach((name, i) => {
+                    params[name] = match[i + 1];
+                });
+
+                return { route, params };
+            }
+        }
+        return null;
+    }
+
     getPath() {
         return window.location.pathname;
     }
 
     getRoute() {
-        const path = this.getPath();
-        return this.routes.find((route) => route.path === path);
+        return this.matchRoute(this.getPath());
+    }
+
+    getParams() {
+        const match = this.getRoute();
+        return match ? match.params : {};
     }
 
     getComponent() {
-        const route = this.getRoute();
-        return route ? route.component : this.notFound;
+        const match = this.getRoute();
+        return match ? match.route.component : this.notFound;
     }
 
     navigate(path) {
