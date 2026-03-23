@@ -1,6 +1,6 @@
 @use "../abstracts/variables" as *;
 
-.task-form {
+.form {
   display: flex;
   flex-direction: column;
   gap: $space-md;
@@ -25,7 +25,7 @@
     }
   }
 
-  .task-select-group {
+  .select-group {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

@@ -3,6 +3,7 @@ import PageHeader from "../components/PageHeader.jsx";
 import {useState} from "react";
 import Modal from "../components/Modal.jsx";
 import {ICONS} from "../constants/icons.js";
+import ProjectForm from "../components/forms/ProjectForm.jsx";
 
 const Projects = () => {
     const [addModalOpen, setAddModalOpen] = useState(false);
@@ -20,7 +21,7 @@ const Projects = () => {
 
             {addModalOpen && (
                 <Modal title="Create project" onClose={() => setAddModalOpen(false)}>
-
+                    <ProjectForm onSubmit={handleSubmit} />
                 </Modal>
             )}
 

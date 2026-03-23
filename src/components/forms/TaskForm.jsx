@@ -11,13 +11,13 @@ const TaskForm = ({ onSubmit }) => {
     };
 
     return (
-        <form className="task-form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <div className="form-group">
                 <label>Task</label>
                 <input type="text" name="title" placeholder="Enter task name" required />
             </div>
 
-            <div className="task-select-group">
+            <div className="select-group">
                 <div className="form-group">
                     <label>Status</label>
                     <select name="status" required>
