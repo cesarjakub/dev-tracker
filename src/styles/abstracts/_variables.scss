@@ -1,5 +1,5 @@
 // colors
-$color-bg: #f1f1f1;
+$color-bg: #f6f6f6;
 $color-surface: #ffffff;
 $color-black: #000000;
 
@@ -26,25 +26,29 @@ $btn-success-hover: #25A99D;
 $btn-danger: $color-danger;
 $btn-danger-hover: rgba(217, 58, 96, 0.22);
 
+$primary-bg: rgba(144, 224, 239, 0.15);
+$primary-text: $btn-primary;
+$primary-border: rgba(0, 150, 199, 0.3);
+
+$success-bg: #2EC4B626;
+$success-text: $color-success;
+$success-border: rgba(46, 196, 182, 0.3);
+
+$warning-bg: #F59E0B26;
+$warning-text: $color-warning;
+$warning-border: rgba(245, 158, 11, 0.3);
+
+$danger-bg: #EF476F26;
+$danger-text: $color-danger;
+$danger-border: rgba(239, 71, 111, 0.3);
+
+
 // nav item
 $nav-hover-bg: #d8d8d8;
 $nav-active-bg: #d8d8d8;
 $nav-active-border: #c8c8c8;
 $nav-text: $text-secondary;
 $nav-text-active: $text-primary;
-
-// tasks
-$badge-success-bg: #2EC4B626;
-$badge-success-text: $color-success;
-$badge-success-border: $color-success;
-
-$badge-warning-bg: #F59E0B26;
-$badge-warning-text: $color-warning;
-$badge-warning-border: $color-warning;
-
-$badge-danger-bg: #EF476F26;
-$badge-danger-text: $color-danger;
-$badge-danger-border: $color-danger;
 
 // spacing
 $space-xs: 0.25rem;

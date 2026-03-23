@@ -6,10 +6,11 @@ import { useTasks } from "../hooks/useTasks.js";
 import {useState} from "react";
 import Modal from "../components/Modal.jsx";
 import TaskForm from "../components/forms/TaskForm.jsx";
+import StatsCard from "../components/StatsCard.jsx";
 
 const Todo = () => {
     const [addModalOpen, setAddModalOpen] = useState(false);
-    const { tasks, addTask, deleteTask, toggleDone } = useTasks();
+    const { tasks, addTask, deleteTask, toggleDone, stats } = useTasks();
 
     const handleSubmit = (data) => {
         addTask(data);
@@ -28,6 +29,11 @@ const Todo = () => {
                     <TaskForm onSubmit={handleSubmit}/>
                 </Modal>
             )}
+
+            <div className="stats-container">
+                <StatsCard label="COMPLETED" value={`${stats.done}/${stats.total}`} className="stats-primary"/>
+                <StatsCard label="DONE" value={`${stats.progress}%`} className="stats-primary"/>
+            </div>
 
             <TodoTable tasks={tasks} onDelete={deleteTask} onToggleDone={toggleDone} />
         </div>

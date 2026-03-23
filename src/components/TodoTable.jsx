@@ -9,7 +9,6 @@ const TodoTable = ({ tasks, onDelete, onToggleDone }) => {
                         <th>DONE</th>
                         <th>TASK-ID</th>
                         <th>TASK</th>
-                        <th>STATUS</th>
                         <th>PRIORITY</th>
                         <th>DELETE</th>
                     </tr>

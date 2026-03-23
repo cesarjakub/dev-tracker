@@ -16,11 +16,6 @@ const TodoRow = ({ task, onDelete, onToggleDone }) => {
         if (onToggleDone) onToggleDone(task.id, newDone);
     };
 
-    const statusVariant = {
-        Done: "success",
-        Todo: "danger"
-    };
-
     const priorityVariant = {
         Low: "success",
         Medium: "warning",
@@ -34,11 +29,6 @@ const TodoRow = ({ task, onDelete, onToggleDone }) => {
             </td>
             <td>#{task.id}</td>
             <td>{task.title}</td>
-            <td>
-                <Badge variant={statusVariant[task.status]}>
-                    {task.status}
-                </Badge>
-            </td>
             <td>
                 <Badge variant={priorityVariant[task.priority]}>
                     {task.priority}

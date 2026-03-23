@@ -29,5 +29,10 @@ export const useTasks = () => {
         ));
     };
 
-    return { tasks, addTask, deleteTask, toggleDone };
+    const total = tasks.length > 0 ? tasks.length : 0;
+    const todo = tasks.filter(task => task.status === "Todo").length;
+    const done = tasks.filter(task => task.status === "Done").length;
+    const progress = total > 0 ? Math.round((done / total) * 100) : 0;
+
+    return { tasks, addTask, deleteTask, toggleDone, stats: { total, done, todo, progress } };
 }

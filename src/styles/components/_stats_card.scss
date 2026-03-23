@@ -1,0 +1,45 @@
+@use "../abstracts/variables" as *;
+
+.stats-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-sm;
+  padding: $space-sm $space-lg;
+
+  .stats-value{
+    font-weight: bold;
+    font-size: $font-size-xl;
+  }
+
+  .stats-label{
+    font-weight: lighter;
+    text-align: start;
+    font-size: $font-size-md;
+  }
+}
+
+.stats-primary{
+  color: $primary-text;
+  background-color: $primary-bg;
+  border: 1px solid $primary-border;
+}
+
+.stats-secondary{
+  color: $success-text;
+  background-color: $success-bg;
+  border: 1px solid $success-border;
+}
+
+.stats-warning{
+  color: $warning-text;
+  background-color: $warning-bg;
+  border: 1px solid $warning-border;
+}
+
+.stats-danger{
+  color: $danger-text;
+  background-color: $danger-bg;
+  border: 1px solid $danger-border;
+}

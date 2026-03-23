@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as *;
+
+
+.todo{
+
+  .stats-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: $space-sm;
+    margin: $space-md;
+  }
+}

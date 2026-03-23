@@ -2,6 +2,7 @@
 @use "./base/globals";
 
 @use "./pages/projects";
+@use "./pages/todo";
 @use "./pages/not-found";
 
 @use "./layouts/layout";
@@ -13,5 +14,6 @@
 @use "./components/todo-table";
 @use "./components/badge";
 @use "./components/modal";
+@use "./components/stats_card";
 
 @use "./forms/task-form";
