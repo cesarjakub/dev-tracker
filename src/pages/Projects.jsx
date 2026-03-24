@@ -28,11 +28,11 @@ const Projects = () => {
                     <ProjectForm onSubmit={handleSubmit} projects={projects} />
                 </Modal>
             )}
-
-            {projects.map((project) => (
-                <ProjectCard key={project.id} project={project} onDelete={deleteProject} />
-            ))}
-
+            <div className="projects-wrapper">
+                {projects.map((project) => (
+                    <ProjectCard key={project.id} project={project} onDelete={deleteProject} />
+                ))}
+            </div>
         </div>
     )
 }
