@@ -8,7 +8,12 @@ const ProjectForm = ({ onSubmit, projects }) => {
         e.preventDefault();
 
         const data = Object.fromEntries(new FormData(e.target));
-        console.log(projects);
+
+        if (/\s/.test(data.title)) {
+            setError("Project title cannot contain spaces!");
+            return;
+        }
+
         const exists = projects.some(p => p.title.toLowerCase() === data.title.toLowerCase());
 
         if (exists) {

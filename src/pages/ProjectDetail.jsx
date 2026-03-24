@@ -2,6 +2,7 @@ import {useProject} from "../hooks/useProject.js";
 import NotFound from "./NotFound.jsx";
 import router from "../router/index.js";
 import {useEffect, useState} from "react";
+import formatDate from "../utils/formatDate.js";
 
 const ProjectDetail = () => {
     const [project, setProject] = useState(null);
@@ -15,10 +16,16 @@ const ProjectDetail = () => {
 
     if (!project) return <NotFound />;
 
+
+
     return (
         <div className="project-detail">
             <h1>{project.title}</h1>
-            <p>{project.description || "No description yet."}</p>
+            <p>Created: {formatDate(project.date)}</p>
+            <p>Session time: {project.sessionTime}</p>
+            <p>Total time: {project.totalTime}</p>
+            <p>{project.description}</p>
+            <p>{project.wiki}</p>
         </div>
     )
 }

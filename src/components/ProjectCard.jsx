@@ -1,19 +1,13 @@
 import Button from "./Button.jsx";
 import router from "../router/index.js";
 import {ICONS} from "../constants/icons.js";
+import formatDate from "../utils/formatDate.js";
 
 const ProjectCard = ({ project, onDelete }) => {
-    const formatDate = (date) => {
-        if (!date) return "";
-
-        const d = new Date(date);
-        return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
-    };
-
     return (
         <div className="project-card">
             <h1>{project.title}</h1>
-            <p>{project.description || "No description yet."}</p>
+            <p>{project.description}</p>
             <p>Created: {formatDate(project.date)}</p>
             <div className="actions">
                 <Button onClick={() => router.navigate(`/projects/${project.title}`)} className="btn-primary">
