@@ -25,7 +25,7 @@ const Projects = () => {
 
             {addModalOpen && (
                 <Modal title="Create project" onClose={() => setAddModalOpen(false)}>
-                    <ProjectForm onSubmit={handleSubmit} />
+                    <ProjectForm onSubmit={handleSubmit} projects={projects} />
                 </Modal>
             )}
 

@@ -36,4 +36,14 @@
       min-width: $modal-min-width;
     }
   }
+
+  .form-error{
+    padding: $space-md;
+
+    border-radius: $radius-sm;
+
+    color: $danger-text;
+    background-color: $danger-bg;
+    border: 1px solid $danger-border;
+  }
 }

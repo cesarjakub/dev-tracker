@@ -1,11 +1,21 @@
 import Button from "../Button.jsx";
+import {useState} from "react";
 
-const ProjectForm = ({ onSubmit }) => {
+const ProjectForm = ({ onSubmit, projects }) => {
+    const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const data = Object.fromEntries(new FormData(e.target));
+        console.log(projects);
+        const exists = projects.some(p => p.title.toLowerCase() === data.title.toLowerCase());
+
+        if (exists) {
+            setError("Project with this title already exists!");
+            return;
+        }
+
         onSubmit(data);
 
         e.target.reset();
@@ -17,7 +27,7 @@ const ProjectForm = ({ onSubmit }) => {
                 <label>Project</label>
                 <input type="text" name="title" placeholder="Enter project name" required />
             </div>
-
+            {error && <div className="form-error">{error}</div>}
             <Button type="submit" className="btn-primary">
                 Create project
             </Button>

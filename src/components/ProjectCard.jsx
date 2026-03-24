@@ -10,11 +10,9 @@ const ProjectCard = ({ project, onDelete }) => {
                 <Button onClick={() => router.navigate(`/projects/${project.title}`)}>
                     View
                 </Button>
-                {onDelete && (
-                    <Button onClick={() => onDelete(project.id)} className="btn-danger">
-                        Delete
-                    </Button>
-                )}
+                <Button onClick={() => onDelete(project.id)} className="btn-danger">
+                    Delete
+                </Button>
             </div>
         </div>
     )
