@@ -75,7 +75,7 @@ const ProjectDetail = () => {
                 </div>
             </div>
 
-            <div className={`content ${edit ? 'form' : ''}`}>
+            <div className={`project-detail-content ${edit ? 'form' : ''}`}>
                 <section className="content-section">
                     <div className="section-header">
                         <h3>DESCRIPTION</h3>
@@ -116,7 +116,7 @@ const ProjectDetail = () => {
                             />
                         </div>
                     ) : (
-                        <div className="view-text wiki-content">
+                        <div className="view-text">
                             {project.wiki ? (
                                 <ReactMarkdown>{project.wiki}</ReactMarkdown>
                             ) : (

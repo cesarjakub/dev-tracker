@@ -32,12 +32,17 @@
     }
 
     textarea {
-      min-height: 120px;
-      resize: vertical;
-      line-height: 1.5;
+      min-height: 200px;
+      max-height: 600px;
+
+      padding: $space-md;
+      font-size: $font-size-md;
+
+      scrollbar-width: thin;
+      scrollbar-color: $nav-active-border transparent;
 
       &.wiki-textarea {
-        min-height: 250px;
+        min-height: 400px;
       }
     }
   }
