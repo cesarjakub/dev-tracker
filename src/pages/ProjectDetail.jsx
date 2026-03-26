@@ -6,6 +6,7 @@ import {useSessionTimer} from "../hooks/useSessionTimer.js";
 import Button from "../components/Button.jsx";
 import {ICONS} from "../constants/icons.js";
 import ProjectTimer from "../components/ProjectTimer.jsx";
+import ReactMarkdown from "react-markdown";
 
 const DESCRIPTION_LIMIT = 100;
 
@@ -116,7 +117,11 @@ const ProjectDetail = () => {
                         </div>
                     ) : (
                         <div className="view-text wiki-content">
-                            {project.wiki || "No wiki yet."}
+                            {project.wiki ? (
+                                <ReactMarkdown>{project.wiki}</ReactMarkdown>
+                            ) : (
+                                "No wiki yet."
+                            )}
                         </div>
                     )}
                 </section>
