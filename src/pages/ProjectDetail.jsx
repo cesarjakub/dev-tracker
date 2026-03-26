@@ -1,19 +1,26 @@
 import NotFound from "./NotFound.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import formatDate from "../utils/formatDate.js";
 import {useProjectDetail} from "../hooks/useProjectDetail.js";
 import {useSessionTimer} from "../hooks/useSessionTimer.js";
 import Button from "../components/Button.jsx";
 import {ICONS} from "../constants/icons.js";
 import ProjectTimer from "../components/ProjectTimer.jsx";
-import ProjectEditForm from "../components/forms/ProjectEditForm.jsx";
-import ProjectInfo from "../components/ProjectInfo.jsx";
+
+const DESCRIPTION_LIMIT = 100;
 
 const ProjectDetail = () => {
     const { project, updateCurrentProject } = useProjectDetail();
     const [edit, setEdit] = useState(false);
     const [description, setDescription] = useState("");
     const [wiki, setWiki] = useState("");
+
+    useEffect(() => {
+        if (project) {
+            setDescription(project.description || "");
+            setWiki(project.wiki || "");
+        }
+    }, [project]);
 
     const { isActive, time, start, stop } = useSessionTimer((seconds) => {
         updateCurrentProject({
@@ -67,12 +74,52 @@ const ProjectDetail = () => {
                 </div>
             </div>
 
-            <div className="content">
-                {edit ? (
-                    <ProjectEditForm description={description} wiki={wiki} setDescription={setDescription} setWiki={setWiki} />
-                ) : (
-                    <ProjectInfo description={description} wiki={wiki} />
-                )}
+            <div className={`content ${edit ? 'form' : ''}`}>
+                <section className="content-section">
+                    <div className="section-header">
+                        <h3>DESCRIPTION</h3>
+                        {edit && (
+                            <span className={`char-counter ${description.length >= DESCRIPTION_LIMIT ? 'limit' : ''}`}>
+                                {description.length}/{DESCRIPTION_LIMIT}
+                            </span>
+                        )}
+                    </div>
+
+                    {edit ? (
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
+                                maxLength={DESCRIPTION_LIMIT}
+                                placeholder="Short summary..."
+                            />
+                        </div>
+                    ) : (
+                        <p className="view-text">{project.description || "No description provided."}</p>
+                    )}
+                </section>
+
+                <section className="content-section">
+                    <div className="section-header">
+                        <h3>WIKI</h3>
+                    </div>
+
+                    {edit ? (
+                        <div className="form-group">
+                            <textarea
+                                className="wiki-textarea"
+                                value={wiki}
+                                onChange={(e) => setWiki(e.target.value)}
+                                placeholder="Detailed documentation..."
+                            />
+                        </div>
+                    ) : (
+                        <div className="view-text wiki-content">
+                            {project.wiki || "No wiki yet."}
+                        </div>
+                    )}
+                </section>
             </div>
         </div>
     )

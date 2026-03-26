@@ -52,12 +52,43 @@
   .content {
     display: flex;
     flex-direction: column;
-    gap: $space-lg;
+    gap: $space-xl;
 
-    .view-fields {
+    .content-section {
       display: flex;
       flex-direction: column;
-      gap: $space-lg;
+      gap: $space-sm;
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .char-counter {
+          font-size: $font-size-md;
+          color: $text-secondary;
+
+          &.limit {
+            color: $color-danger; font-weight: bold;
+          }
+        }
+      }
+
+      .view-text {
+        padding: $space-sm $space-md;
+      }
+    }
+
+    &.form {
+      margin: 0;
+
+      .form-group {
+        margin: 0;
+
+        input, textarea {
+          width: 100%;
+        }
+      }
     }
   }
 }
