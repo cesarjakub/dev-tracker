@@ -5,5 +5,7 @@
   .projects-wrapper{
     display: flex;
     flex-wrap: wrap;
+    gap: $space-md;
+    margin: $space-md;
   }
 }

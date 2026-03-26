@@ -4,6 +4,7 @@
 @use "./pages/projects";
 @use "./pages/todo";
 @use "./pages/not-found";
+@use "./pages/project-detail";
 
 @use "./layouts/layout";
 @use "./components/nav-item";
@@ -16,5 +17,6 @@
 @use "./components/modal";
 @use "./components/stats_card";
 @use "./components/project-card";
+@use "./components/project-timer";
 
 @use "forms/form";

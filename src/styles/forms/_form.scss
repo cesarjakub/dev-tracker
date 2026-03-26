@@ -9,18 +9,35 @@
   .form-group {
     display: flex;
     flex-direction: column;
-    gap: $space-xs;
+    gap: $space-sm;
 
     input,
-    select {
+    select,
+    textarea {
       padding: $space-sm $space-md;
-      border: 1px solid $color-surface;
+      background-color: $color-surface;
+      border: 1px solid $nav-active-border;
       border-radius: $radius-sm;
       font: inherit;
 
       &:focus {
         outline: none;
         border-color: $btn-primary;
+      }
+
+      &::placeholder {
+        color: $text-secondary;
+        opacity: 0.6;
+      }
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.5;
+
+      &.wiki-textarea {
+        min-height: 250px;
       }
     }
   }
