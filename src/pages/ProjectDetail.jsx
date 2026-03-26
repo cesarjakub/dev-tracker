@@ -27,6 +27,7 @@ const ProjectDetail = () => {
         updateCurrentProject({
             sessionTime: seconds,
             totalTime: (project.totalTime || 0) + seconds,
+            lastEdited: new Date(),
         });
     });
 
@@ -43,7 +44,7 @@ const ProjectDetail = () => {
     };
 
     const handleSave = () => {
-        updateCurrentProject({ description, wiki });
+        updateCurrentProject({ description, wiki, lastEdited: new Date() });
         setEdit(false);
     };
 
@@ -88,12 +89,7 @@ const ProjectDetail = () => {
 
                     {edit ? (
                         <div className="form-group">
-                            <input
-                                type="text"
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                                maxLength={DESCRIPTION_LIMIT}
-                                placeholder="Short summary..."
+                            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} maxLength={DESCRIPTION_LIMIT} placeholder="Short summary..."
                             />
                         </div>
                     ) : (
@@ -108,11 +104,7 @@ const ProjectDetail = () => {
 
                     {edit ? (
                         <div className="form-group">
-                            <textarea
-                                className="wiki-textarea"
-                                value={wiki}
-                                onChange={(e) => setWiki(e.target.value)}
-                                placeholder="Detailed documentation..."
+                            <textarea className="wiki-textarea" value={wiki} onChange={(e) => setWiki(e.target.value)} placeholder="Detailed documentation..."
                             />
                         </div>
                     ) : (

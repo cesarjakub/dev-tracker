@@ -15,6 +15,8 @@ export const useProjectDetail = () => {
     const updateCurrentProject = (data) => {
         if (!project) return;
         updateProject(project.id, data);
+
+
     };
 
     return { project, updateCurrentProject };

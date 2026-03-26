@@ -14,6 +14,7 @@ export const useProject = () => {
             id: maxId + 1,
             title: data.title,
             date: new Date(),
+            lastEdited: new Date(),
             description: data.description || "No description yet.",
             wiki: data.wiki || "No wiki yet.",
             sessionTime: 0,
