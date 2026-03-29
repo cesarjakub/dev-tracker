@@ -2,7 +2,7 @@ import NotFound from "./NotFound.jsx";
 import {useEffect, useState} from "react";
 import formatDate from "../utils/formatDate.js";
 import {useProjectDetail} from "../hooks/useProjectDetail.js";
-import {useSessionTimer} from "../hooks/useSessionTimer.js";
+import {useSessionTimer} from "../context/SessionTimerContext.jsx";
 import Button from "../components/Button.jsx";
 import {ICONS} from "../constants/icons.js";
 import ProjectTimer from "../components/ProjectTimer.jsx";
@@ -12,6 +12,7 @@ const DESCRIPTION_LIMIT = 100;
 
 const ProjectDetail = () => {
     const { project, updateCurrentProject } = useProjectDetail();
+    const { isActive, time, activeProjectId, start, stop } = useSessionTimer();
     const [edit, setEdit] = useState(false);
     const [description, setDescription] = useState("");
     const [wiki, setWiki] = useState("");
@@ -23,13 +24,18 @@ const ProjectDetail = () => {
         }
     }, [project]);
 
-    const { isActive, time, start, stop } = useSessionTimer((seconds) => {
+    const isProjectActive = isActive && activeProjectId === project?.id;
+    const displayTime = isProjectActive ? time : 0;
+
+    const handleStart = () => start(project.id);
+
+    const handleStop = () => {
+        const seconds = stop();
         updateCurrentProject({
-            sessionTime: seconds,
             totalTime: (project.totalTime || 0) + seconds,
             lastEdited: new Date(),
         });
-    });
+    };
 
     if (!project) return <NotFound />;
 
@@ -72,7 +78,7 @@ const ProjectDetail = () => {
                 </div>
 
                 <div className="timer">
-                    <ProjectTimer isActive={isActive} time={time} totalTime={project.totalTime || 0} start={start} stop={stop}/>
+                    <ProjectTimer isActive={isProjectActive} time={displayTime} totalTime={project.totalTime || 0} start={handleStart} stop={handleStop}/>
                 </div>
             </div>
 
