@@ -3,7 +3,7 @@ import router from "../router/index.js";
 import {useProject} from "./useProject.js";
 
 export const useProjectDetail = () => {
-    const { projects, updateProject } = useProject();
+    const { projects, updateProject, addSession } = useProject();
     const [project, setProject] = useState(null);
 
     useEffect(() => {
@@ -15,9 +15,12 @@ export const useProjectDetail = () => {
     const updateCurrentProject = (data) => {
         if (!project) return;
         updateProject(project.id, data);
-
-
     };
 
-    return { project, updateCurrentProject };
+    const addSessionToProject = (duration) => {
+        if (!project) return;
+        addSession(project.id, duration);
+    };
+
+    return { project, updateCurrentProject, addSessionToProject };
 };

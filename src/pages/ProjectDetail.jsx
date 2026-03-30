@@ -11,7 +11,7 @@ import ReactMarkdown from "react-markdown";
 const DESCRIPTION_LIMIT = 100;
 
 const ProjectDetail = () => {
-    const { project, updateCurrentProject } = useProjectDetail();
+    const { project, updateCurrentProject, addSessionToProject } = useProjectDetail();
     const { isActive, time, activeProjectId, start, stop } = useSessionTimer();
     const [edit, setEdit] = useState(false);
     const [description, setDescription] = useState("");
@@ -27,14 +27,14 @@ const ProjectDetail = () => {
     const isProjectActive = isActive && activeProjectId === project?.id;
     const displayTime = isProjectActive ? time : 0;
 
-    const handleStart = () => start(project.id);
+    const handleStart = () => {
+        if (!project) return;
+        start(project.id);
+    };
 
     const handleStop = () => {
         const seconds = stop();
-        updateCurrentProject({
-            totalTime: (project.totalTime || 0) + seconds,
-            lastEdited: new Date(),
-        });
+        addSessionToProject(seconds);
     };
 
     if (!project) return <NotFound />;
