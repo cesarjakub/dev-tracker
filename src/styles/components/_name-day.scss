@@ -1,0 +1,28 @@
+@use "../abstracts/variables" as *;
+
+.name-day-container{
+  display: flex;
+  flex-direction: column;
+  padding: $space-sm $space-md;
+
+  .date{
+    font-size: $font-size-md;
+    color: $text-secondary;
+    white-space: nowrap;
+  }
+
+  .name-day{
+    font-size: $font-size-lg;
+    color: $text-primary;
+    white-space: nowrap;
+  }
+
+  &.loading {
+    opacity: 0.5;
+    white-space: nowrap;
+  }
+
+  &.collapse {
+    opacity: 0;
+  }
+}

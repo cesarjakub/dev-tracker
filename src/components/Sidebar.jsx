@@ -3,6 +3,7 @@ import {navRoutes} from "../router/routes.js";
 import NavItem from "./NavItem.jsx";
 import Button from "./Button.jsx";
 import {useState} from "react";
+import NameDay from "./NameDay.jsx";
 
 const Sidebar = () => {
     const [isCollapse, setisCollapse] = useState(false);
@@ -27,6 +28,7 @@ const Sidebar = () => {
             </nav>
 
             <div className="sidebar-footer">
+                <NameDay collapsed={isCollapse} />
                 <div className="sidebar-footer-line"></div>
                 <Button icon={ICONS.SIDEBAR} onClick={() => setisCollapse(prev => !prev)} className="collapse-btn">
                     {!isCollapse && "Collapse"}
