@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {getNameDayInfo} from "../api/api.js";
+import {months} from "../constants/months.js";
 
 const NameDay = ({ collapsed }) => {
     const [data, setData] = useState(null);
@@ -26,8 +27,8 @@ const NameDay = ({ collapsed }) => {
 
     return (
         <div className={`name-day-container ${collapsed ? "collapse" : ""}`}>
-            <span className="date">{data.dayNumber}. {data.month.genitive}</span>
-            <span className="name-day">Svátek: {data.name}</span>
+            <span className="date">{data.dayNumber}. {months[data.month.nominative]}</span>
+            <span className="name-day">Name Day: {data.name}</span>
         </div>
     )
 }
