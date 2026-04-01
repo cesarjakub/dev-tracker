@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as *;
+
+.chart-tooltip{
+  background-color: $color-surface;
+  padding: $space-sm $space-md;
+  border: 1px solid rgba($color-black, 0.1);
+  border-radius: $radius-sm;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  pointer-events: none;
+
+  &.visible{
+    display: block;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  .label{
+    color: $text-secondary;
+    font-size: $font-size-md;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .value{
+    color: $color-primary;
+    font-size: $font-size-lg;
+    font-weight: 700;
+    display: block;
+    margin-top: $space-xs;
+  }
+}

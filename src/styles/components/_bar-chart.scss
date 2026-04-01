@@ -1,0 +1,20 @@
+@use "../abstracts/variables" as *;
+
+.bar-chart-container {
+  width: 100%;
+  height: 300px;
+  background-color: $color-surface;
+  padding: $space-lg;
+  border-radius: $radius-md;
+  border: 1px solid rgba($color-black, 0.05);
+  margin-bottom: $space-xl;
+
+  .recharts-cartesian-grid-horizontal line {
+    stroke: rgba($color-black, 0.05);
+  }
+
+  .recharts-text {
+    font-family: inherit;
+    font-weight: 500;
+  }
+}
