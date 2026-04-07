@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as *;
+
+.mobile-navbar {
+  display: none;
+  background-color: $color-bg;
+  border-bottom: 1px solid rgba($text-secondary, 0.5);
+
+  @media (max-width: 768px) {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .mobile-header-bar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: $space-md;
+  }
+
+  .mobile-nav-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+
+    &.open {
+      display: flex;
+    }
+  }
+}

@@ -30,6 +30,10 @@
       margin: $space-md;
     }
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .sidebar-collapsed {

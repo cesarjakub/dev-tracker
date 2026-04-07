@@ -4,6 +4,10 @@
   display: flex;
   min-height: 100vh;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
   .content {
     flex-grow: 1;
     height: 100vh;

@@ -11,6 +11,7 @@ import LogoIcon from '../assets/icons/Logo.svg';
 import SmallLogoIcon from '../assets/icons/Small Logo.svg';
 import Add from '../assets/icons/Add plus.svg';
 import Close from '../assets/icons/Close.svg';
+import Menu from '../assets/icons/Menu.svg';
 
 export const ICONS = {
     ANALYTICS: AnalyticsIcon,
@@ -26,4 +27,5 @@ export const ICONS = {
     SMALL_LOGO: SmallLogoIcon,
     ADD: Add,
     CLOSE: Close,
+    MENU: Menu,
 };
