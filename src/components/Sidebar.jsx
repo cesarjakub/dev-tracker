@@ -6,7 +6,7 @@ import {useState} from "react";
 import NameDay from "./NameDay.jsx";
 
 const Sidebar = () => {
-    const [isCollapse, setisCollapse] = useState(false);
+    const [isCollapse, setIsCollapse] = useState(false);
 
     return (
         <aside className={`sidebar ${isCollapse ? "sidebar-collapsed" : ""}`}>
@@ -30,7 +30,7 @@ const Sidebar = () => {
             <div className="sidebar-footer">
                 <NameDay collapsed={isCollapse} />
                 <div className="sidebar-footer-line"></div>
-                <Button icon={ICONS.SIDEBAR} onClick={() => setisCollapse(prev => !prev)} className="collapse-btn">
+                <Button icon={ICONS.SIDEBAR} onClick={() => setIsCollapse(prev => !prev)} className="collapse-btn">
                     {!isCollapse && "Collapse"}
                 </Button>
             </div>

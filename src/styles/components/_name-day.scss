@@ -12,14 +12,14 @@
   }
 
   .name-day{
-    font-size: $font-size-lg;
+    font-size: $font-size-md;
     color: $text-primary;
     white-space: nowrap;
   }
 
   &.loading {
     opacity: 0.5;
-    font-size: $font-size-lg;
+    font-size: $font-size-md;
     white-space: nowrap;
   }
 

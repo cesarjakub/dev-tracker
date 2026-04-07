@@ -69,7 +69,8 @@
           color: $text-secondary;
 
           &.limit {
-            color: $color-danger; font-weight: bold;
+            color: $color-danger;
+            font-weight: bold;
           }
         }
       }
