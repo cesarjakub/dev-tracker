@@ -9,6 +9,14 @@ export const useAnalytics = (projects) => {
         const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
         const graphVals = [];
 
+        const getLocalDateString = (date) => {
+            const d = new Date(date);
+            const year = d.getFullYear();
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        };
+
         const now = new Date();
         const dayNum = now.getDay();
         const diffToMonday = (dayNum === 0 ? 6 : dayNum - 1);
@@ -22,7 +30,7 @@ export const useAnalytics = (projects) => {
             d.setDate(monday.getDate() + i);
             graphVals.push({
                 dayName: days[i],
-                dateStr: d.toISOString().split('T')[0],
+                dateStr: getLocalDateString(d),
                 seconds: 0
             });
         }
