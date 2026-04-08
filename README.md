@@ -1,16 +1,27 @@
-# React + Vite
+# dev-tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Jednoduchý a efektivní nástroj pro sledování vývoje projektů, úkolů a času.
 
-Currently, two official plugins are available:
+## Cíl projektu
+Hlavním cílem aplikace je poskytnout vývojářům (nebo studentům ČVUT) přehledné rozhraní pro:
+* Správu projektů a jejich detailů.
+* Sledování času stráveného na úkolech (ProjectTimer).
+* Vizualizaci progresu pomocí grafů (Analytics).
+* Organizaci denních úkolů (Todo).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologie
+* **Framework:** React (Vite)
+* **Styling:** SCSS (v adresáři `styles`)
+* **Ikony:** SVG (vlastní set v `assets/icons`)
 
-## React Compiler
+## Struktura projektu
+* `/src/api` – Komunikace s backendem/daty.
+* `/src/components` – Znovupoužitelné UI komponenty (tlačítka, karty, modály).
+* `/src/hooks` – Vlastní logika (např. `useProject`, `useTasks`).
+* `/src/pages` – Hlavní pohledy aplikace (Dashboard, Analytics, atd.).
+* `/src/context` – Globální správa stavu (časovač relace).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Spuštění projektu
+1. Instalace závislostí: `npm install`
+2. Spuštění vývojového serveru: `npm run dev`
+3. Build pro produkci: `npm run build`
