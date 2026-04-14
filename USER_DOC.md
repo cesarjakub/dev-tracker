@@ -2,11 +2,11 @@
 
 ---
 
-| Atribut     | Hodnota                                                     |
-|-------------|-------------------------------------------------------------|
-| **Autor**   | Jakub César                                                 |
-| **Datum**   | 2026-04-08                                                  |
-| **Stack**   | React 19 · Vite 7 · SCSS · Recharts |
+| Atribut     | Hodnota                                             |
+|-------------|-----------------------------------------------------|
+| **Autor**   | Jakub César                                         |
+| **Datum**   | 2026-04-08                                          |
+| **Stack**   | React 19 · Vite 7 · SCSS · Recharts · Custom router |
 
 ---
 
@@ -468,7 +468,3 @@ npm install
 **❌ Problém:** Wiki sekce v Project Detailu nezobrazuje Markdown formátování.
 
 **✅ Řešení:** Ujistěte se, že závislost `react-markdown` je správně nainstalována (`npm install`). V případě, že wiki zobrazuje surový Markdown text jako `## Nadpis`, pravděpodobně chybí tato závislost.
-
----
-
-*Dokumentace vygenerována pro verzi 0.0.0. Pro nejnovější informace nahlédněte do zdrojového kódu nebo kontaktujte [Tvé Jméno].*

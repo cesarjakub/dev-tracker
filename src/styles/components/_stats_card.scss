@@ -8,6 +8,8 @@
   border-radius: $radius-sm;
   padding: $space-sm $space-lg;
 
+  animation: slideUpText 0.4s ease-out 0.2s both;
+
   .stats-value{
     font-weight: bold;
     font-size: $font-size-xl;
@@ -40,4 +42,9 @@
   color: $danger-text;
   background-color: $danger-bg;
   border: 1px solid $danger-border;
+}
+
+@keyframes slideUpText {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
