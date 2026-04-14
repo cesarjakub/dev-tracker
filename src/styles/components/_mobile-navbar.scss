@@ -23,10 +23,43 @@
   .mobile-nav-menu {
     display: none;
     flex-direction: column;
-    padding: 1rem;
+    padding: $space-md;
+
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 1rem;
+    right: 1rem;
+
+    background-color: $color-bg;
+    border-radius: $radius-lg;
+    border: 1px solid rgba($text-secondary, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+    z-index: 999;
 
     &.open {
       display: flex;
+
+      animation: slideDown 0.3s ease;
     }
+  }
+}
+
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  top: 60px;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  z-index: 998;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

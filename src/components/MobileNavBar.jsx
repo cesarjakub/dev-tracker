@@ -31,6 +31,10 @@ const MobileNavBar = () => {
                     />
                 ))}
             </nav>
+
+            {isOpen && (
+                <div className="mobile-backdrop" onClick={() => setIsOpen(false)} />
+            )}
         </header>
     )
 }
