@@ -2,7 +2,7 @@
 
 ---
 
-| Atribut     | Hodnota                                             |
+| Kategorie     | Detaily projektu                                             |
 |-------------|-----------------------------------------------------|
 | **Autor**   | Jakub César                                         |
 | **Datum**   | 2026-04-08                                          |
@@ -10,7 +10,7 @@
 
 ---
 
-## 📋 Obsah
+## Obsah
 
 1. [Úvod a Vize](#1-úvod-a-vize)
 2. [Instalace a Setup](#2-instalace-a-setup)
@@ -45,7 +45,7 @@ Moderní vývojář každý den žongluje s projekty, backlogem, pull requesty a
 
 ### Cílová skupina
 
-Primárně určeno pro **individuální vývojáře** nebo **studenty** (původní README zmiňuje studenty ČVUT), kteří potřebují lehký, lokálně běžící nástroj bez cloudové závislosti.
+Primárně určeno pro **individuální vývojáře** nebo **studenty**, kteří potřebují lehký, lokálně běžící nástroj bez cloudové závislosti.
 
 ---
 
@@ -61,15 +61,14 @@ Před spuštěním se ujistěte, že máte nainstalováno:
 | **npm** | 9.x nebo vyšší | Správa závislostí |
 | **Git** | libovolná | Klonování repozitáře |
 
-> **Poznámka:** Aplikace využívá `sass-embedded`, který vyžaduje kompatibilní nativní binárky pro váš OS. Na Apple Silicon (M1/M2) jsou přibaleny automaticky (`sass-embedded-darwin-arm64`).
 
 ### Instalace krok za krokem
 
 **1. Klonujte repozitář:**
 
 ```bash
-git clone <URL_REPOZITÁŘE>
-cd dev-tracker
+git clone https://gitlab.fel.cvut.cz/cesarjak/devtracker-web-application.git
+cd devtracker-web-application
 ```
 
 **2. Nainstalujte závislosti:**
@@ -112,7 +111,7 @@ Aplikace bude dostupná na `http://localhost:5173` (výchozí port Vite).
 
 ## 3. Průvodce moduly
 
-Aplikace se skládá ze čtyř hlavních obrazovek, přístupných přes boční navigační panel (desktop) nebo spodní lištu (mobil).
+Aplikace se skládá ze čtyř hlavních obrazovek, přístupných přes boční navigační panel (desktop) nebo horní lištu (mobil).
 
 ### 3.1 Projects (Dashboard)
 
@@ -181,8 +180,6 @@ Nejdůležitější část Project Detailu. Timer zobrazuje:
 3. Vraťte se zpět do Project Detailu a stiskněte **Stop Session**.
 4. Naměřený čas je automaticky přičten k `totalTime` projektu a uložen jako nová položka v poli `sessions`.
 
-> ⚠️ **Důležité:** Vždy lze mít aktivní pouze **jednu session najednou**. Spuštění nové session automaticky neukončuje předchozí — je nutné ji manuálně zastavit.
-
 ---
 
 ### 3.3 To-Do
@@ -233,8 +230,6 @@ Sloupcový graf vykreslený pomocí **Recharts** zobrazuje denní aktivitu od po
 2. Pro každý den (Po–Ne) vytvoří entry s inicializovanými `seconds: 0`.
 3. Projde všechny sessions všech projektů a podle `session.date` přiřadí sekundy k odpovídajícímu dni.
 4. Vrátí `weeklyData` jako pole pro komponentu `BarChart`.
-
-> **Poznámka k časovým zónám:** Hook používá lokální datum (`getLocalDateString`) pro mapování sessions, nikoli UTC. Díky tomu jsou grafy vždy konzistentní s lokálním časem uživatele.
 
 #### Statistické karty
 
@@ -317,7 +312,7 @@ useEffect(() => {
 }, [projects]);
 ```
 
-> ⚠️ **Upozornění:** Smazání dat z prohlížeče (vymazání localStorage, private mode) způsobí **trvalou ztrátu všech projektů a úkolů**. Aplikace v aktuální verzi nenabízí export ani zálohu dat.
+> **Upozornění:** Smazání dat z prohlížeče (vymazání localStorage, private mode) způsobí **trvalou ztrátu všech projektů a úkolů**. Aplikace v aktuální verzi nenabízí export ani zálohu dat.
 
 ---
 
@@ -414,57 +409,11 @@ Styly jsou organizovány dle SCSS architektury do těchto složek:
 
 ```
 src/styles/
-├── abstracts/     # Proměnné, mixins, funkce
-├── base/          # Reset, typografie, globální styly
+├── abstracts/     # Proměnné, reset
+├── base/          # globální styly
 ├── components/    # Styly pro jednotlivé komponenty
 ├── forms/         # Styly pro formuláře
 ├── layouts/       # Layout struktury (sidebar, content)
 ├── pages/         # Page-specific styly
 └── main.scss      # Entry point, importuje vše výše
 ```
-
----
-
-## 6. Troubleshooting
-
-### Časté chyby a jejich řešení
-
----
-
-**❌ Problém:** Po spuštění `npm run dev` hlásí Vite chybu `Cannot find module 'sass-embedded'`.
-
-**✅ Řešení:** Smažte `node_modules` a `package-lock.json` a znovu nainstalujte závislosti:
-```bash
-rm -rf node_modules package-lock.json
-npm install
-```
-
----
-
-**❌ Problém:** Projekty nebo úkoly zmizely po restartu prohlížeče.
-
-**✅ Řešení:** Zkontrolujte, zda nejste v režimu **anonymní/soukromé okno** — tyto módy neperzistují `localStorage` po zavření okna. Dále ověřte v DevTools → Application → Local Storage, zda klíče `projects` a `tasks` existují.
-
----
-
-**❌ Problém:** Timer běží dál i po přechodu na jinou stránku, ale hodnota skočí zpět na `0` po návratu.
-
-**✅ Řešení:** Toto je očekávané chování — `SessionTimerContext` běží globálně, ale komponenta `ProjectTimer` zobrazuje čas pouze pokud `activeProjectId === project.id`. Pokud vidíte `0`, ujistěte se, že jste navigovali zpět na **stejný** projekt, pro který jste timer spustili.
-
----
-
-**❌ Problém:** Po kliknutí na projektovou kartu se zobrazí stránka 404 (NotFound).
-
-**✅ Řešení:** Router porovnává cestu `/projects/:name` s aktuálním URL. Pokud název projektu obsahuje speciální znaky nebo mezery, může dojít k nesprávnému enkódování. Pojmenovávejte projekty bez mezer nebo speciálních znaků (aktuální verze neobsahuje URL enkodér).
-
----
-
-**❌ Problém:** Aplikace se nespustí s chybou `Error: React requires a root element`.
-
-**✅ Řešení:** Zkontrolujte `index.html` — musí obsahovat element `<div id="root"></div>`. Soubor `src/main.jsx` mountuje React aplikaci právě do tohoto elementu.
-
----
-
-**❌ Problém:** Wiki sekce v Project Detailu nezobrazuje Markdown formátování.
-
-**✅ Řešení:** Ujistěte se, že závislost `react-markdown` je správně nainstalována (`npm install`). V případě, že wiki zobrazuje surový Markdown text jako `## Nadpis`, pravděpodobně chybí tato závislost.

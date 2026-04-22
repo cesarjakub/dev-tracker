@@ -3,7 +3,7 @@
 Jednoduchý a efektivní nástroj pro sledování vývoje projektů, úkolů a času.
 
 ## Cíl projektu
-Hlavním cílem aplikace je poskytnout vývojářům (nebo studentům ČVUT) přehledné rozhraní pro:
+Hlavním cílem aplikace je poskytnout vývojářům přehledné rozhraní pro:
 * Správu projektů a jejich detailů.
 * Sledování času stráveného na úkolech (ProjectTimer).
 * Vizualizaci progresu pomocí grafů (Analytics).
