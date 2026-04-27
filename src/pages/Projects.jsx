@@ -17,7 +17,7 @@ const Projects = () => {
     };
 
     return (
-        <custom-tag className="projects">
+        <div className="projects">
             <PageHeader>
                 <h1>Projects</h1>
                 <Button onClick={() => setAddModalOpen(true)} icon={ICONS.ADD} iconAlt="add icon" className="btn-primary">Create</Button>
@@ -33,7 +33,7 @@ const Projects = () => {
                     <ProjectCard key={project.id} project={project} onDelete={deleteProject} />
                 ))}
             </div>
-        </custom-tag>
+        </div>
     )
 }
 
