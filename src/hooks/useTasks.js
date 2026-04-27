@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import storage from "../utils/localStorage.js";
 
+/**
+ * Manages the tasks array with full CRUD operations and derived statistics.
+ * Tasks are persisted to `localStorage` under the key `"tasks"`.
+ */
 export const useTasks = () => {
     const [tasks, setTasks] = useState(() => storage.getObject("tasks") || []);
 
@@ -8,6 +12,12 @@ export const useTasks = () => {
         storage.setObject("tasks", tasks);
     }, [tasks]);
 
+    /**
+     * Creates a new task and appends it to the list.
+     * The id is derived from the current maximum id to avoid collisions.
+     *
+     * @param {{ title: string, status: string, priority: string }} data - Raw form data.
+     */
     const addTask = (data) => {
         const maxId = tasks.length > 0 ? Math.max(...tasks.map(t => t.id)) : 0;
         const newTask = {
@@ -19,10 +29,21 @@ export const useTasks = () => {
         setTasks([...tasks, newTask]);
     };
 
+    /**
+     * Removes the task with the given id from the list.
+     *
+     * @param {number} id - The id of the task to remove.
+     */
     const deleteTask = (id) => {
         setTasks(tasks.filter(task => task.id !== id));
     };
 
+    /**
+     * Updates the status of a task to `"Done"` or `"Todo"`.
+     *
+     * @param {number}  id   - The id of the task to update.
+     * @param {boolean} done - `true` sets status to `"Done"`, `false` sets it to `"Todo"`.
+     */
     const toggleDone = (id, done) => {
         setTasks(tasks.map(task =>
             task.id === id ? { ...task, status: done ? "Done" : "Todo" } : task

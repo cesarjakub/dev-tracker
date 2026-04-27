@@ -1,5 +1,11 @@
 import {useMemo} from "react";
 
+/**
+ * Derives weekly bar-chart data and high-level stats from the projects array.
+ * The result is memorised and only recalculated when `projects` changes.
+ *
+ * @param {import('./useProject').Project[]} projects - The full list of projects.
+ */
 export const useAnalytics = (projects) => {
     return useMemo(() => {
         if (!projects || projects.length === 0) {
@@ -9,6 +15,13 @@ export const useAnalytics = (projects) => {
         const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
         const graphVals = [];
 
+        /**
+         * Converts a Date object to a local `YYYY-MM-DD` string, respecting the
+         * browser's local time zone (not UTC).
+         *
+         * @param {Date|string|number} date
+         * @returns {string}
+         */
         const getLocalDateString = (date) => {
             const d = new Date(date);
             const year = d.getFullYear();
