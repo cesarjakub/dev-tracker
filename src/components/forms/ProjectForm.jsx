@@ -6,6 +6,7 @@ const ProjectForm = ({ onSubmit, projects }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setError("");
 
         const data = Object.fromEntries(new FormData(e.target));
 
@@ -30,7 +31,7 @@ const ProjectForm = ({ onSubmit, projects }) => {
         <form className="form" onSubmit={handleSubmit}>
             <div className="form-group">
                 <label>Project</label>
-                <input type="text" name="title" placeholder="Enter project name" required />
+                <input type="text" name="title" placeholder="Enter project name" required autoFocus />
             </div>
             {error && <div className="form-error">{error}</div>}
             <Button type="submit" className="btn-primary">

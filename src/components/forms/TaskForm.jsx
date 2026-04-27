@@ -14,7 +14,7 @@ const TaskForm = ({ onSubmit }) => {
         <form className="form" onSubmit={handleSubmit}>
             <div className="form-group">
                 <label>Task</label>
-                <input type="text" name="title" placeholder="Enter task name" required />
+                <input type="text" name="title" placeholder="Enter task name" required autoFocus />
             </div>
 
             <div className="select-group">
