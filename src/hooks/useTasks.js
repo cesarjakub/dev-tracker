@@ -50,10 +50,19 @@ export const useTasks = () => {
         ));
     };
 
+    /**
+     * Replaces the entire tasks array with a reordered version.
+     *
+     * @param {object[]} reordered
+     */
+    const reorderTasks = (reordered) => {
+        setTasks(reordered);
+    }
+
     const total = tasks.length > 0 ? tasks.length : 0;
     const todo = tasks.filter(task => task.status === "Todo").length;
     const done = tasks.filter(task => task.status === "Done").length;
     const progress = total > 0 ? Math.round((done / total) * 100) : 0;
 
-    return { tasks, addTask, deleteTask, toggleDone, stats: { total, done, todo, progress } };
+    return { tasks, addTask, deleteTask, toggleDone, reorderTasks, stats: { total, done, todo, progress } };
 }

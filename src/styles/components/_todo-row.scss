@@ -24,3 +24,33 @@
   }
 }
 
+.drag-handle{
+  color: $text-secondary;
+  font-size: $font-size-xlg;
+  cursor: grab;
+  user-select: none;
+  padding: 0, $space-sm;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.todo-row{
+  transition: background-color $transition-speed ease, opacity 0.15s ease;
+
+  &.drag-over{
+    background-color: rgba($color-primary, 0.08);
+    outline: 2px dashed $color-primary;
+    outline-offset: -2px;
+  }
+
+  &[draggable="true"]{
+    cursor: grab;
+
+    &:active{
+      cursor: grabbing;
+      opacity: 0.6;
+    }
+  }
+}

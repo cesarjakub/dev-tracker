@@ -3,7 +3,7 @@ import Button from "./Button.jsx";
 import {ICONS} from "../constants/icons.js";
 import Badge from "./Badge.jsx";
 
-const TodoRow = ({ task, onDelete, onToggleDone }) => {
+const TodoRow = ({ task, onDelete, onToggleDone, isDragOver, onDragStart, onDragOver, onDragLeave, onDrop, onDragEnd }) => {
     const [done, setDone] = useState(task.status === "Done");
 
     useEffect(() => {
@@ -23,7 +23,15 @@ const TodoRow = ({ task, onDelete, onToggleDone }) => {
     };
 
     return (
-        <tr className={`todo-row ${done ? "done" : ""}`}>
+        <tr
+            className={`todo-row ${done ? "done" : ""} ${isDragOver ? "drag-over" : ""}`}
+            draggable
+            onDragStart={onDragStart}
+            onDragOver={onDragOver}
+            onDragLeave={onDragLeave}
+            onDrop={onDrop}
+            onDragEnd={onDragEnd}
+        >
             <td className="todo-checkbox">
                 <input type="checkbox" checked={done} onChange={handleCheckbox} />
             </td>

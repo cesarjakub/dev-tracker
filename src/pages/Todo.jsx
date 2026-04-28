@@ -10,7 +10,7 @@ import StatsCard from "../components/StatsCard.jsx";
 
 const Todo = () => {
     const [addModalOpen, setAddModalOpen] = useState(false);
-    const { tasks, addTask, deleteTask, toggleDone, stats } = useTasks();
+    const { tasks, addTask, deleteTask, toggleDone, reorderTasks, stats } = useTasks();
 
     const handleSubmit = (data) => {
         addTask(data);
@@ -35,7 +35,7 @@ const Todo = () => {
                 <StatsCard label="DONE" value={`${stats.progress}%`} className="stats-primary"/>
             </div>
 
-            <TodoTable tasks={tasks} onDelete={deleteTask} onToggleDone={toggleDone} />
+            <TodoTable tasks={tasks} onDelete={deleteTask} onToggleDone={toggleDone}  onReorder={reorderTasks}/>
         </div>
     )
 }
