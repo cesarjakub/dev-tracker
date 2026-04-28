@@ -3,7 +3,6 @@ import router from "./router/index.js";
 import Sidebar from "./components/Sidebar.jsx";
 import { SessionTimerProvider } from "./context/SessionTimerContext.jsx";
 import MobileNavBar from "./components/MobileNavBar.jsx";
-import "./components/CustomLayout.js";
 
 function App() {
     const [Component, setComponent] = useState(() => router.getComponent());
@@ -18,17 +17,16 @@ function App() {
 
     return (
         <SessionTimerProvider>
-            <custom-layout>
-                <div slot="nav">
-                    <Sidebar />
-                    <MobileNavBar />
-                </div>
+            <div className="layout">
+                <Sidebar />
+                <MobileNavBar />
                 <main className="content">
                     <Component/>
                 </main>
-            </custom-layout>
+            </div>
         </SessionTimerProvider>
     );
 }
+
 
 export default App;
