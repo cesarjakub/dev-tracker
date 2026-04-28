@@ -19,14 +19,15 @@ const ProjectTimer = ({ isActive, time, totalTime, start, stop }) => {
         <div className="project-timer">
             <ProgressRing seconds={isActive ? time : 0} isActive={isActive} />
 
-            <p>Total: {formatTime(totalTime)}</p>
+            <div className="project-content">
+                <p>Total: {formatTime(totalTime)}</p>
 
-            {!isActive ? (
-                <Button onClick={start} className="btn-primary">Start Session</Button>
-            ) : (
-                <Button onClick={stop} className="btn-danger">Stop Session</Button>
-            )}
-
+                {!isActive ? (
+                    <Button onClick={start} className="btn-primary">Start Session</Button>
+                ) : (
+                    <Button onClick={stop} className="btn-danger">Stop Session</Button>
+                )}
+            </div>
             <timer-beep ref={beepRef} frequency="800" duration="250"></timer-beep>
         </div>
     );

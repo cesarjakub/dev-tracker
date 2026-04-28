@@ -16,6 +16,13 @@
     border-bottom: 1px solid $nav-active-border;
     padding-bottom: $space-xl;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: $space-xl;
+      padding-bottom: $space-lg;
+    }
+
     .title-area {
       display: flex;
       flex-direction: column;
