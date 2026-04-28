@@ -27,3 +27,17 @@
     }
   }
 }
+
+.svg-progress-ring{
+  display: block;
+  margin: 0 auto;
+
+  &:hover{
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+  }
+}
+
+timer-beep{
+  display: none;
+}
