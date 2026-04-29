@@ -2,6 +2,7 @@
 
 .project-card{
   flex: 1 1 $project-card-width;
+  min-width: 0;
   border-radius: $radius-md;
   padding: $space-md;
   border: 1px solid $nav-active-border;
@@ -16,6 +17,10 @@
   p {
     color: $text-secondary;
     font-size: $font-size-lg;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   .actions {
