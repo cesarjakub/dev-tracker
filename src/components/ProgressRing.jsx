@@ -25,7 +25,7 @@ const ProgressBar = ({ seconds, isActive }) => {
     const handleClick = (e) => {
         const circle = circleRef.current;
         if (!circle) return;
-        circle.setAttribute("Stroke", "#F59E0B");
+        circle.setAttribute("stroke", "#F59E0B");
         setTimeout(() => {
             circle.setAttribute("stroke", isActive ? "#00B4D8" : "#e5e7eb");
         }, 300);
