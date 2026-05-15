@@ -155,7 +155,7 @@ Po kliknutí na projektovou kartu se otevře detail projektu. Tato obrazovka je 
 
 #### Sekce Description
 
-Krátký textový popis projektu. V režimu editace (tlačítko **Edit Project**) je k dispozici jednořádkový input s **limitem 100 znaků**, který zobrazuje čítač `X/100`. Překročení limitu je vizuálně signalizováno třídou `.limit`.
+Krátký textový popis projektu. V režimu editace (tlačítko **Edit Project**) je k dispozici jednořádkový input s **limitem 100 znaků**, který zobrazuje čítač `X/100`. Překročení limitu je vizuálně signalizováno.
 
 #### Sekce Wiki
 
@@ -201,8 +201,8 @@ Jednoduchý task manager pro správu denních vývojářských úkolů. Každý 
 
 V horní části stránky jsou zobrazeny dvě agregované metriky vypočítané přímo v hooku `useTasks`:
 
-- **COMPLETED:** Počet dokončených úkolů ve formátu `X/Y` (hotové/celkem)
-- **DONE:** Procentuální vyjádření dokončení, výpočet: `Math.round((done / total) * 100)`
+- Počet dokončených úkolů ve formátu `X/Y` (hotové/celkem)
+- Procentuální vyjádření dokončení, výpočet: `Math.round((done / total) * 100)`
 
 **Akce nad úkoly:**
 
